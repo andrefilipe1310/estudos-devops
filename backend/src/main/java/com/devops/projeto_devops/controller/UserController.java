@@ -12,7 +12,7 @@ public class UserController {
 
 
     public ResponseEntity<String> getUsers() {
-        return ResponseEntity.status(HttpStatus.OK).body("List of users");
+        return ResponseEntity.status(HttpStatus.OK).body("List of users alterada");
     }
 
 }
