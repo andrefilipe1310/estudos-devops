@@ -1,0 +1,25 @@
+name: CI de testes e build
+on:
+    pull_request:
+        branches: [main]
+jobs:
+    build-e-testes:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout do codigo fonte
+            uses: actions/checkout@v4
+          - name: Configurar JDK 17
+            uses: actions/setup-java@v4
+            with:
+                java-version: '17'
+                distribution: 'temurin'
+          - name: Rodar testes do Maven
+            working-directory: ./backend
+            run: mvn clean test
+          - name: Rodar Snyk para checar vunerabilidades 
+            uses: snyk/actions/maven@latest
+            env:
+                SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+            with:
+                command: monitor
+                project: ./backend
