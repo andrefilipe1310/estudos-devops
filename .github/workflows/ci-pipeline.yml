@@ -22,7 +22,7 @@ jobs:
         run: mvn clean test
 
       - name: Rodar Snyk para checar vunerabilidades
-        uses: snyk/actions/maven@latest
+        uses: snyk/actions/maven@v3
         working-directory: ./backend
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
