@@ -14,6 +14,6 @@ class UserControllerTest {
         ResponseEntity<String> response = controller.getUsers();
 
         assertEquals(200, response.getStatusCodeValue());
-        assertEquals("List of users alterada", response.getBody());
+        assertEquals("List of users alterada para a versao 2", response.getBody());
     }
 }
