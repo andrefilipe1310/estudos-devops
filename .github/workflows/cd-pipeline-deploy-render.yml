@@ -13,7 +13,7 @@ jobs:
               uses: actions/setup-java@v4
               with:
                 java-version: '17'
-                distribuition: 'temurin'
+                distribution: 'temurin'
             - name: Rodar testes do Maven
               working-directory: ./backend
               run: mvn clean verify
