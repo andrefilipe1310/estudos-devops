@@ -13,7 +13,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<String> getUsers() {
-        return ResponseEntity.status(HttpStatus.OK).body("List of users alterada");
+        return ResponseEntity.status(HttpStatus.OK).body("List of users alterada para a versao 2");
     }
 
 }
